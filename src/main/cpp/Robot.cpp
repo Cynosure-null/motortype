@@ -60,16 +60,11 @@ void Robot::TeleopInit() {
 }
 
 void Robot::TeleopPeriodic() {
-  if (m_stick.GetYButton()) {
-    mainTimer.Start();
-    if (mainTimer.Get() <=  units::time::second_t(1.0)) {
-      m_theOneTrueMotor.Set(0.5);
+  if (m_stick.GetLeftBumper()) {
+      m_theOneTrueMotorEncoder.SetPosition(15.0);
     }
-    else {
-      m_shooterShifter.Set(frc::DoubleSolenoid::Value::kReverse); //possibly kForwards
-    }    
   }
-}
+
 
 void Robot::DisabledInit() {}
 

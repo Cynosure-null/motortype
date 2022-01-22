@@ -40,6 +40,7 @@ class Robot : public frc::TimedRobot {
 
   static const int theOneTrueMotorDeviceID = 1;
 rev::CANSparkMax m_theOneTrueMotor{theOneTrueMotorDeviceID, rev::CANSparkMax::MotorType::kBrushless};\
+rev::SparkMaxRelativeEncoder m_theOneTrueMotorEncoder = m_theOneTrueMotor.GetEncoder();
 
   frc::DoubleSolenoid m_shooterShifter{frc::PneumaticsModuleType::CTREPCM, 1, 2};
 
